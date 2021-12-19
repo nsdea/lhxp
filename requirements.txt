@@ -1,0 +1,12 @@
+gevent
+urllib3
+chardet
+requests
+humanize
+asyncpraw
+dateparser
+youtube_dl
+python-dotenv
+discord-together
+
+git+https://github.com/Pycord-Development/pycord
