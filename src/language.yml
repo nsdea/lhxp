@@ -1,0 +1,16 @@
+# GENERAL
+user: Nutzer
+stats: Statistik
+level-amount: Anzahl der Level
+if-in-levels: In Level zählen? (Standard = An)
+
+# MESSAGES/INFO
+error-title: 🛑 Ein Fehler ist aufgetreten :( 
+success-mod: 🔧 Erfolgreich geändert!
+changed-user-level: The $
+
+# COMMANDS
+stats-description: 📊 Bot Stats (servery, members, ...)
+info-description: 📃 Bot-Information
+ping-description: 📡 Connection statistics
+xp-description: 🎚️ Admin Command » Setze die XP (-Level) eines Nutzers
