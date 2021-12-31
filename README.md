@@ -50,3 +50,18 @@ python3 src/bot.py
 ```bash
 ./experimental.sh
 ```
+
+## Settings
+### Configuration
+- **`colors.yml`** » Color codes for the bot in the format `0xFFFFFF`
+- **`config.yml`** » General bot configuration, such as *playing ...*-Status
+- **`language.yml`** » Translations for the bot (all texts)
+- **`roles.yml`** » Role configuration for rewards etc.
+
+### Auto-Generated
+**Do not change these if you are unsure what you're doing!**
+
+The following files are being managed automatically and should be backuped (manually).
+
+- **`helperreward.yml`** » Last date (unix timestamp) of when someone thanked (`/helfer` [in German]) some other person for helping them.
+- **`xp.yml`** » XP points of all users

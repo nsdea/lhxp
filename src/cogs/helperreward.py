@@ -14,16 +14,19 @@ class HelperReward(commands.Cog):
         self.client = client
 
     @slash_command(description=config.load('lang')['helper-description'])
-    async def helfer(self, ctx,
+    async def thank(self, ctx,
         user: discord.commands.Option(discord.Member, config.load('lang')['user']),
     ):
-        ctx.author.id
+        if not config.load('helperreward').get(ctx.author.id): # user has never thanked someone before
+            config.set('helperreward', ctx.author.id, -1) # reset it to -1
 
-        xp_dict = config.load('xp')
-        xp_dict[message.author.id] += xp_gain
-        config.save(xp_dict, 'xp')
+        if time.time() - config.load('helperreward')[ctx.author.id] < 60*60*12: # cooldown of 12 hours - has to be calculated in seconds
+            return await ctx.respond(title=config.load('lang')['cooldown-title'], description=config.load('lang')['cooldown-description'], color=management.color())
+ 
+        config.set('helperreward', ctx.author.id, time.time()) # save time of the person who thanked
+        config.change('xp', user.id, config.load()['helper-reward-xp'])
 
-
+        await ctx.respond(title=config.load('lang')['helper-thanks-title'], description=config.load('lang')['helper-thanks-description'], color=management.color())
 
 def setup(client):
     client.add_cog(HelperReward(client))

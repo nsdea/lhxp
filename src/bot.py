@@ -15,6 +15,7 @@ colorama.init(autoreset=True)
 print(f'{colorama.Fore.BLUE}INFO »', f'Imported colorama and gevent')
 
 import os
+import time
 import dotenv
 import discord
 import discord.commands
@@ -24,7 +25,7 @@ from discord.ext import commands
 from cogs.helpers import config, management
 
 # SETTINGS
-COLOR = config.load()['color-primary']
+COLOR = management.color()
 TESTING_MODE = management.testing_mode()
 PREFIX = '//'
 
@@ -48,10 +49,25 @@ async def on_ready():
 
     client.loop.create_task(status_task())
 
-for filename in os.listdir(os.getcwd() + '/src/cogs/'): # load cogs/extensions
+# Extensions
+
+for filename in os.listdir(os.getcwd() + '/src/cogs/'):
     if filename.endswith('.py'):
-        client.load_extension(f'cogs.{filename.split(".")[0]}')
+        client.load_extension(f'cogs.{filename.split(".")[0]}') # cogs.filename
         print(f'{colorama.Fore.GREEN}SUCCESS »', f'Loaded extension {filename.split(".")[0]}')
+
+# Backups
+
+config_dir = os.listdir(f'{os.getcwd()}/src/')
+
+for filename in config_dir:
+    if filename.endswith('.yml'):
+        open(f'{os.getcwd()}/backups/{filename}', 'w').write(open(config_dir + filename).read())
+        print(f'{colorama.Fore.GREEN}SUCCESS »', f'Backed up {filename}')
+
+open(f'{os.getcwd()}/backups/last_auto_backup_date.txt', 'w').write(time.time())
+
+# Run
 
 try:
     client.run(token)

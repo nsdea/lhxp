@@ -1,17 +1,5 @@
 # GENERAL
 playing: v0.1
 
-# COLORS
-color-primary: 0x7289DA # blurple
-color-error: 0xFF0000 # red
-color-warn: 0xFFFF00 # yellow
-color-ok: 0x00FF00 # green
-
-# MESSAGES
-error-title: Ein Fehler ist aufgetreten :( 
-
-# COMMANDS
-stats-description: 📊 Bot Stats (servery, members, ...)
-info-description: 📃 Bot-Information
-ping-description: 📡 Connection statistics
-stats: Statistik
+# XP REWARDS
+helper-reward-xp: 5

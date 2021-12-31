@@ -19,7 +19,7 @@ class Errors(commands.Cog):
         error_message = error_message.split('\n\nThe above exception was the direct cause of the following exception:')[0]
 
         embed = discord.Embed(
-            title=config.load()['error-title'],
+            title=config.load('lang')['error-title'],
             description=f'```py\n{error_message}```',
             color=management.color('error')
         )

@@ -24,7 +24,7 @@ def color(style: str='primary') -> discord.Color:
     Returns:
         discord.Color: the requested color
     """
-    return discord.Color(config.load()[f'color-{style}'])
+    return discord.Color(config.load('colors')[f'color-{style}'])
 
 start_timestamp = None
 
