@@ -1,7 +1,7 @@
 try:
-    from .helpers import config, management
+    from .helpers import config, management, xp
 except ImportError:
-    import helpers.config, helpers.management
+    import helpers.config, helpers.management, helpers.xp
 
 import discord
 
@@ -18,16 +18,19 @@ class XPEvent(commands.Cog):
             return
 
         text = message.content.replace('  ', '') # avoid spam
-        xp_gain = text.count(' ') + len(text.replace) # word count
+        xp_gain = text.count(' ') # word count
 
         if xp_gain < 1: # don't go into negative XP numbers!
             return
 
-        xp_dict = config.load('xp')
-        xp_dict[message.author.id] += xp_gain
-        config.save(xp_dict, 'xp')
+        xp.add(message.author, xp_gain)
 
         await self.client.process_commands(message)
 
 def setup(client):
     client.add_cog(XPEvent(client))
+
+# ====================================================================
+# Additional tools
+
+def 
