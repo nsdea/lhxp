@@ -1,0 +1,58 @@
+# GENERAL
+user: Nutzer
+stats: Statistik
+level-amount: Anzahl der Level
+if-in-levels: In Level zählen? (Standard = An)
+
+# MESSAGES/INFO
+error-tip: ❗ Bitte gib die Fehlermeldung inklusive deines Befehls an das (Bot-Entwicklungs-)Team weiter! Danke.
+error-title: 🛑 Ein Fehler ist aufgetreten :(
+error-reload: ❌ Diese Erweiterung konnte nicht gefunden werden!
+
+success-mod: 🔧 Erfolgreich geändert!
+success-reload: 🔃 Erweiterung wurde erfolgreich neu geladen!
+
+cooldown-title: ⌛ Entschuldigung, du bist gerade auf einem Cooldown!
+cooldown-description: Probiere es bitte später erneut. 
+
+rank-reason: Hat den Rang durch XP verdient
+standard-rank: Standard-Rang
+
+# COMMANDS
+help-title: 📃 So funktioniert das XP-System!
+help-description:
+  - "Durch das XP/Levelingsystem kann jeder in dieser Discord Community Erfahrungspunkte (XP) sammeln, welche dann in Level hochgerechnet werden."
+  - ""
+  - "Du kannst durch folgendes **XP bekommen**:"
+  - "> 💬 Nachrichten schreiben (lange Nachrichten geben natürlich mehr Punkte)"
+  - "> ⏫ Bumpen (hin und wieder `!d bump` in den Befehlskanal schicken)"
+  - "> 📅 Aktivität (schreib' möglichst jeden Tag eine Nachricht)"
+  - "> 🤗 Helfen/Probleme lösen (bitte die Person, der du geholfen hast, `/thank @{user}` zu machen!)"
+  - "> ✨ Freunde mit deinem Link einladen (einfach `/invite` ausführen für deinen Link!)"
+
+help-command-description: 📃 Erklärt das XP-System
+
+reload-description: 🔃 Startet ein Bot-Modul/Erweiterung ("cog") neu
+reload-list-title: ➕ Liste der Erweiterungen
+
+stats-description: 📊 Bot-Statistik (Server- & Mitgliederzahl, ...)
+ping-description: 📡 Verbindungsstatistiken
+
+xp-title: XP & Level von {user}
+xp-description:
+  - "📈 **Level:** {level_amount}/{level_for_next_rank}"
+  - "🏅 **Rang:** {rank}"
+  - "💡 **XP:** {xp_amount}/{xp_for_next_level}"
+  - ""
+  - "**Level-Fortschritt:**"
+  - "> {bar}" 
+
+xp-command-description: 💡 Schau dir die XP-Statistik von einem Servermitglied an!
+
+set-xp-description: 🎚️ Admin Command » Setze die XP (-Level) eines Servermitgliedes
+
+helper-description: 🤝 Jemand hat dein Problem gelöst? Hier danke sagen!
+helper-thanks-title: 🤗 Alles klar, du hast der Person gedankt!
+helper-cant-thank-bot: ❌ Du kannst nicht einem Bot danken!
+helper-thanks-description: Warnung! Du kannst für die nächsten 12 Stunden keiner Person mehr danken. Das dient dazu, um Spam und böswillige Bots fernzuhalten. Natürlich können dir weiterhin Personen helfen.
+helper-cant-thank-themselves: ❌ Du kannst nicht dir selbst danken!

@@ -8,7 +8,7 @@ Based on [nsde/NOVΛLIX](https://github.com/nsde/novalix)
     - Requires admin permission
     - Purges all XP from a user
 
-- `/set <@user> <level> <in-levels?>`
+- `/setxp <@user> <level> <in-levels?>`
     - Requires admin permission
     - Sets the experience points or level of an user
 

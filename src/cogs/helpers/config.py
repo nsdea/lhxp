@@ -15,13 +15,7 @@ def load(name: str='config') -> dict:
         dict: The parsed YAML Data from src/config.yml
     """
     parsed_dict = yaml.load(open(get_path(name)), Loader=yaml.SafeLoader)
-    return parsed_dict 
-
-def var(string: str, dic: dict={}):
-    """Replaces a string using a dict."""
-    for key in dic.keys():
-        string = string.replace(key, dic[key])
-    return string
+    return parsed_dict or {}
 
 def nested_set(d: dict, keys: list, value) -> None:
     """Helps with editing a nested dictionary, see https://stackoverflow.com/a/13688108/14345173
@@ -57,26 +51,33 @@ def save(source, filename):
 
 def set(filename: str, key, value=None):
     d = load(filename)
-
-    if '[' in key and ']' in key:
-        exec(f'd{key} = {value}')
-    else:
-        d[key] = value
-    
+    d[key] = value
     save(d, filename)
 
 def change(filename: str, key, value: int=0):
     d = load(filename)
 
-    if not load(filename).get(key):
-        set(filename, key, 0)
-
-    if '[' in key and ']' in key:
-        exec(f'd{key} += {value}')
+    if not load(filename).get(key): # key not found
+        d[key] = value
     else:
         d[key] += value
-
+        
     save(d, filename)
 
+def var(string: str, dic: dict={}):
+    """Replaces a string using a dict."""
+    for key in dic.keys():
+        string = string.replace('{' + str(key) + '}', str(dic[key]))
+    return string
+
+def lang(key: str, dic: dict={}):
+    """Loads a language string, optionally with a replacer-dict used to insert variables."""
+    text = load('lang').get(key)
+
+    if isinstance(text, list):
+        text = '\n'.join(text)
+
+    return var(text, dic)
+
 if __name__ == '__main__':
-    set('xp', 'n', 'sa')
+    print(load('ranks'))

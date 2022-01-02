@@ -13,29 +13,13 @@ class Info(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @slash_command(name='help', description=config.load('lang')['info-description'])
-    async def helpcmd(self, ctx):
-        embed = discord.Embed(title='Stop it, get some help!', color=management.color(), description='')
-        embed.set_image(url='https://sayingimages.com/wp-content/uploads/stop-it-help-meme.jpg')
-        
-        await ctx.respond(embed=embed)
+    @slash_command(name='info', description=config.lang('help-command-description'))
+    async def info(self, ctx):
+        await ctx.respond(embed=discord.Embed(title=config.lang('help-title'), description=config.lang('help-description', {'user': ctx.author.name}), color=management.color()))
 
-    @slash_command(description=config.load('lang')['stats-description'])
-    async def stats(self, ctx):
-        embed = discord.Embed(
-            title='Bot Stats',
-            description='** **',
-            color=management.color(),
-        )
-        embed.add_field(name='Servers', value=f'{len(self.client.guilds)}')
-        embed.add_field(name='Members', value=f'{len(self.client.users)}')
-        embed.set_footer(text='💙')
-        
-        await ctx.respond(embed=embed)
-
-    @slash_command(description=config.load('lang')['ping-description'])
+    @slash_command(description=config.lang('ping-description'))
     async def ping(self, ctx):
-        embed = discord.Embed(title=config.load('lang')['stats'], color=management.color(), timestamp=management.get_start_time())
+        embed = discord.Embed(title=config.lang('stats'), color=management.color(), timestamp=management.get_start_time())
         embed.add_field(name=':desktop: Ping', value=str(round(self.client.latency * 1000, 2)) + 'ms')
         await ctx.respond(embed=embed)
 

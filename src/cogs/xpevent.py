@@ -18,10 +18,12 @@ class XPEvent(commands.Cog):
             return
 
         text = message.content.replace('  ', '') # avoid spam
-        xp_gain = text.count(' ') # word count
+        xp_gain = text.count(' ')//50 # word count
 
-        if xp_gain < 1: # don't go into negative XP numbers!
-            return
+        print(xp_gain)
+
+        if xp_gain < 2: # don't go into negative XP numbers!
+            xp_gain = 1
 
         xp.add(message.author, xp_gain)
 
@@ -29,8 +31,3 @@ class XPEvent(commands.Cog):
 
 def setup(client):
     client.add_cog(XPEvent(client))
-
-# ====================================================================
-# Additional tools
-
-def 

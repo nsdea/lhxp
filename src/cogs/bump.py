@@ -1,7 +1,7 @@
 try:
-    from .helpers import config, management
+    from .helpers import config, management, xp
 except ImportError:
-    import helpers.config, helpers.management
+    import helpers.config, helpers.management, helpers.xp
 
 import discord
 
@@ -16,8 +16,8 @@ class Bump(commands.Cog):
     async def on_message(self, message):
         if message.author.id == 302050872383242240: # bump
             if ':thumbsup:' in message.embeds[0].description: # succesful bump
-                bumper = message.guild.get_member(int(message.embeds[0].description.split('@')[1].split('>')[0]))
-                
+                bumper = message.guild.get_member(int(message.embeds[0].description.split('@')[1].split('>')[0]), 5)
+                xp.add(bumper)
 
 def setup(client):
     client.add_cog(Bump(client))

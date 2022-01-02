@@ -17,10 +17,14 @@ class Errors(commands.Cog):
     async def on_application_command_error(self, ctx, error):
         error_message = '\n'.join(traceback.format_exception(type(error), error, error.__traceback__))
         error_message = error_message.split('\n\nThe above exception was the direct cause of the following exception:')[0]
+        error_message = error_message.split('Traceback (most recent call last):\n\n')[1]
+
+        if 'self.callback(self.cog, ctx, **kwargs)' in error_message:
+            error_message = error_message.split('self.cog, ctx, **kwargs)\n\n')[1]
 
         embed = discord.Embed(
-            title=config.load('lang')['error-title'],
-            description=f'```py\n{error_message}```',
+            title=config.lang('error-title'),
+            description=f'{config.lang("error-tip")}\n```py\n{error_message[:1900]}```',
             color=management.color('error')
         )
 
