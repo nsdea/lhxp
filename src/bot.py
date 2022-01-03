@@ -14,7 +14,6 @@ colorama.init(autoreset=True)
 
 # IMPORTS
 import os
-import time
 import dotenv
 import discord
 import discord.commands
@@ -28,25 +27,25 @@ from cogs.helpers import config, management, xp
 # FUNCTIONS
 async def give_rank(user: discord.Member, rank_level: int):
     rank_index = config.load('ranks')[0].index(user.guild.id)
-    role = config.load('ranks')[rank_level][rank_index]
+    role = user.guild.get_role(config.load('ranks')[rank_level][rank_index])
 
     if role in user.roles:
         return
 
     await user.add_roles(role, reason=config.lang('rank-reason'))
 
-def main():
-    print(f'{colorama.Fore.BLUE}INFO » main() starting...')
+    for channel in config.load()['rank-message-channels']:
+        if channel in [c.id for c in user.guild.text_channels]:
+            await user.guild.get_channel(channel).send(embed=discord.Embed(title=config.lang('rank-dm-title', {'user': str(user)}), description=config.lang('rank-dm-description', {'role': role.mention}), color=management.color()))
 
-    # SETTINGS
-    COLOR = management.color()
-    TESTING_MODE = management.testing_mode()
-    PREFIX = '//'
+def main():
+    print(f'{colorama.Fore.BLUE}INFO » Main starting...')
 
     # SETUP
     dotenv.load_dotenv()  # initialize virtual environment
     token = os.getenv('DISCORD_TOKEN')
-    client = commands.Bot(command_prefix=PREFIX, intents=discord.Intents.all())
+    client = commands.Bot(command_prefix=commands.when_mentioned, intents=discord.Intents.all())
+    xp.set_client(client)
 
     async def status_task():
         await client.change_presence(

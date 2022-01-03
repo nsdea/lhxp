@@ -1,5 +1,5 @@
 # GENERAL
-playing: Beta (02.01.2022)
+playing: Beta (03.01.2022)
 
 # XP REWARDS
 word-reward-xp: .2
@@ -9,3 +9,6 @@ helper-reward-xp: 30
 # EMOJIS
 bar-fill: ":blue_square:"
 bar-empty: ":white_large_square:"
+
+# CHANNELS
+rank-message-channels: [657287172474273822, 921468392618209318] # Rank reward message channel

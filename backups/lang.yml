@@ -18,6 +18,9 @@ cooldown-description: Probiere es bitte später erneut.
 rank-reason: Hat den Rang durch XP verdient
 standard-rank: Standard-Rang
 
+rank-dm-title: ✨ Rangaufstieg, {user}! 
+rank-dm-description: Herlichen Glückwunsch, du wurdest jetzt mit dem Rang {role} gekürt, weil du genügend Erfahrung dafür hast!
+
 # COMMANDS
 help-title: 📃 So funktioniert das XP-System!
 help-description:

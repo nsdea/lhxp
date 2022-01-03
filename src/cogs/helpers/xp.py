@@ -12,6 +12,12 @@ sys.path.append('..') # https://stackoverflow.com/a/11096846
 
 from bot import give_rank
 
+client = None
+
+def set_client(c):
+    global client
+    client = c 
+
 def of(user):
     user = user_to_id(user)
     xp_value = 0
@@ -37,12 +43,14 @@ def needed_for_next_level(user):
     return (level_of(user)+1)**2
 
 def on_add(user: discord.Member, xp_change):
+    global client
+
     rank_list = list(config.load('ranks').keys())[1:]
     rank_list.reverse()
 
     for rank in rank_list:
         if level_of(user) > rank:
-            asyncio.run_until_complete(give_rank(user, rank))
+            client.loop.create_task(give_rank(user, rank))
             break
 
 def user_to_id(user):

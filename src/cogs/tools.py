@@ -17,10 +17,11 @@ class Tools(commands.Cog):
     async def xp_(self, ctx,
         user: discord.commands.Option(discord.Member, config.lang('user'), required=False, default=None)
     ):
+        user = user or ctx.author
+
         if user.bot:
             return await ctx.respond(embed=discord.Embed(title=config.lang('xp-bot-error'), color=management.color('error')))
 
-        user = user or ctx.author
         rank_color = discord.Color(0x000000)
         user_rank = config.lang('standard-rank')
 
