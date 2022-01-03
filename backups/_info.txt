@@ -1,7 +1,7 @@
 This file was auto-generated!
 
-    Last automatic backup: 01/02/2022, 23:42:57
-    Backed up:
+Last automatic backup: 01/03/2022, 02:00:29
+Backed up:
 	- ranks.yml
 	- colors.yml
 	- lang.yml
@@ -9,4 +9,4 @@ This file was auto-generated!
 	- helperreward.yml
 	- config.yml
 
-    Backups are automatically created every time the bot base (bot.py) is started.
+Backups are automatically created every time the bot base (bot.py) is started.

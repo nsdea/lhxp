@@ -101,10 +101,10 @@ def main():
     backup_info = \
     f"""This file was auto-generated!
 
-    Last automatic backup: {datetime.now().strftime('%m/%d/%Y, %H:%M:%S')}
-    Backed up:{backup_list_joiner}{backup_list_joiner.join(backed_up)}
+Last automatic backup: {datetime.now().strftime('%m/%d/%Y, %H:%M:%S')}
+Backed up:{backup_list_joiner}{backup_list_joiner.join(backed_up)}
 
-    Backups are automatically created every time the bot base (bot.py) is started."""
+Backups are automatically created every time the bot base (bot.py) is started."""
 
     open(f'{os.getcwd()}/backups/_info.txt', 'w').write(backup_info)
 
@@ -113,8 +113,8 @@ def main():
     try:
         print(f'{colorama.Fore.BLUE}INFO » Bot starting...')
         client.run(token)
-    except:
-        print(f'{colorama.Fore.RED}FATAL »', 'Unable to run the client. Please check your bot token.')
+    except Exception as e:
+        print(f'{colorama.Fore.RED}FATAL »', 'Unable to run the client. Please check your bot token and your internet connection.\nError: {e}')
 
 if __name__ == '__main__':
     main()

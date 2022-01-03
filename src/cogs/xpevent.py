@@ -18,12 +18,10 @@ class XPEvent(commands.Cog):
             return
 
         text = message.content.replace('  ', '') # avoid spam
-        xp_gain = text.count(' ')//50 # word count
-
-        print(xp_gain)
+        xp_gain = text.count(' ')*config.load()['word-reward-xp'] # word count
 
         if xp_gain < 2: # don't go into negative XP numbers!
-            xp_gain = 1
+            xp_gain = config.load()['word-reward-xp']
 
         xp.add(message.author, xp_gain)
 

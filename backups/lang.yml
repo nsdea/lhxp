@@ -39,6 +39,7 @@ stats-description: 📊 Bot-Statistik (Server- & Mitgliederzahl, ...)
 ping-description: 📡 Verbindungsstatistiken
 
 xp-title: XP & Level von {user}
+xp-bot-error: ❌ Bots haben keine XP!
 xp-description:
   - "📈 **Level:** {level_amount}/{level_for_next_rank}"
   - "🏅 **Rang:** {rank}"
@@ -49,6 +50,7 @@ xp-description:
 
 xp-command-description: 💡 Schau dir die XP-Statistik von einem Servermitglied an!
 
+
 set-xp-description: 🎚️ Admin Command » Setze die XP (-Level) eines Servermitgliedes
 
 helper-description: 🤝 Jemand hat dein Problem gelöst? Hier danke sagen!
@@ -56,3 +58,6 @@ helper-thanks-title: 🤗 Alles klar, du hast der Person gedankt!
 helper-cant-thank-bot: ❌ Du kannst nicht einem Bot danken!
 helper-thanks-description: Warnung! Du kannst für die nächsten 12 Stunden keiner Person mehr danken. Das dient dazu, um Spam und böswillige Bots fernzuhalten. Natürlich können dir weiterhin Personen helfen.
 helper-cant-thank-themselves: ❌ Du kannst nicht dir selbst danken!
+
+leaderboard-title: 🏅 Bestenliste
+leaderboard-command-description: 🏅 Die Mitglieder mit den meisten Erfahrungs-Punkten (XP)!

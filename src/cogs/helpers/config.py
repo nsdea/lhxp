@@ -56,6 +56,7 @@ def set(filename: str, key, value=None):
 
 def change(filename: str, key, value: int=0):
     d = load(filename)
+    value = round(value, 1)
 
     if not load(filename).get(key): # key not found
         d[key] = value

@@ -19,7 +19,7 @@ def of(user):
     if config.load('xp').get(user):
         xp_value = config.load('xp').get(user)
     
-    return xp_value
+    return round(xp_value, 1)
 
 def level_of(user):
     user = user_to_id(user)
@@ -37,8 +37,8 @@ def needed_for_next_level(user):
     return (level_of(user)+1)**2
 
 def on_add(user: discord.Member, xp_change):
-    print(config.load('ranks').keys())
-    rank_list = list(config.load('ranks').keys()).reverse()
+    rank_list = list(config.load('ranks').keys())[1:]
+    rank_list.reverse()
 
     for rank in rank_list:
         if level_of(user) > rank:
