@@ -65,3 +65,6 @@ def user_to_id(user):
 def add(user: discord.Member, value: int):
     config.change('xp', user_to_id(user), value)
     on_add(user, value)
+
+    if of(user) < 0:
+        config.set('xp', user_to_id(user), 0)

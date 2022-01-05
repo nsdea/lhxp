@@ -71,5 +71,12 @@ class Tools(commands.Cog):
 
         await ctx.respond(embed=discord.Embed(title=config.lang('leaderboard-title'), description=text, color=management.color()))
 
+    @slash_command(description=config.lang('invite-command-description'))
+    async def invite(self, ctx):
+        for channel in config.load()['invite-channels']:
+            if channel in [c.id for c in ctx.guild.text_channels]:
+                invitation = await ctx.guild.get_channel(channel).create_invite(reason=f'Guest Invite Link ({str(ctx.author)})')
+                await ctx.respond(embed=discord.Embed(title=config.lang('invite-title'), description=config.lang('invite-description', {'link': invitation.url}), color=management.color()))
+
 def setup(client):
     client.add_cog(Tools(client))

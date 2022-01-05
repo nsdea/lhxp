@@ -1,5 +1,5 @@
 # GENERAL
-playing: Beta (04.01.2022)
+playing: Beta (06.01.2022)
 
 # XP REWARDS
 word-reward-xp: .2
@@ -11,4 +11,5 @@ bar-fill: ":blue_square:"
 bar-empty: ":white_large_square:"
 
 # CHANNELS
+invite-channels: [657287172474273822, 921468392618209318]
 rank-message-channels: [657287172474273822, 921468392618209318] # Rank reward message channel
