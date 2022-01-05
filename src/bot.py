@@ -73,17 +73,6 @@ def main():
 
             print(f'{colorama.Fore.GREEN}SUCCESS »', f'Loaded extension {cog_name}')
 
-    @slash_command(description=config.lang('reload-description'), guild_ids=[921468392026824745])
-    async def reload(ctx, cog: discord.commands.Option(str, config.lang('user'), required=False, default='')):
-        if not cog:
-            cog_list_joiner = '» '
-            return await ctx.respond(embed=discord.Embed(title=config.lang('reload-list-title'), description=f'{cog_list_joiner}{cog_list_joiner.join(extensions_loaded)}', color=management.color()))
-
-        if not cog in extensions_loaded:
-            return await ctx.respond(embed=discord.Embed(title=config.lang('error-reload'), color=management.color('warn')))
-
-        client.reload_extension('cogs.' + cog) 
-
     # Backups
 
     config_dir = f'{os.getcwd()}/src/'
@@ -113,7 +102,7 @@ Backups are automatically created every time the bot base (bot.py) is started.""
         print(f'{colorama.Fore.BLUE}INFO » Bot starting...')
         client.run(token)
     except Exception as e:
-        print(f'{colorama.Fore.RED}FATAL »', 'Unable to run the client. Please check your bot token and your internet connection.\nError: {e}')
+        print(f'{colorama.Fore.RED}FATAL »', f'Unable to run the client. Please check your bot token and your internet connection.\nError: {e}')
 
 if __name__ == '__main__':
     main()

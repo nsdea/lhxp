@@ -4,7 +4,6 @@ except ImportError:
     import helpers.config, helpers.management, helpers.xp
 
 import discord
-import traceback
 
 from discord.ext import commands
 from discord.commands import slash_command
@@ -32,7 +31,7 @@ class Tools(commands.Cog):
                     rank_color = role.color
                     break
 
-        level_for_next_rank = ''
+        level_for_next_rank = list(config.load('ranks').keys())[1]
 
         rank_num = 1
         for rank in list(config.load('ranks').keys()):

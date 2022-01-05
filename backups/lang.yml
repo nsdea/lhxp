@@ -1,4 +1,5 @@
-# GENERAL
+# GENERAL TRANSLATIONS
+cog: Erweiterung (cog), z.B. tools
 user: Nutzer
 stats: Statistik
 level-amount: Anzahl der Level
@@ -52,8 +53,6 @@ xp-description:
   - "> {bar}" 
 
 xp-command-description: 💡 Schau dir die XP-Statistik von einem Servermitglied an!
-
-
 set-xp-description: 🎚️ Admin Command » Setze die XP (-Level) eines Servermitgliedes
 
 helper-description: 🤝 Jemand hat dein Problem gelöst? Hier danke sagen!
@@ -64,3 +63,6 @@ helper-cant-thank-themselves: ❌ Du kannst nicht dir selbst danken!
 
 leaderboard-title: 🏅 Bestenliste
 leaderboard-command-description: 🏅 Die Mitglieder mit den meisten Erfahrungs-Punkten (XP)!
+
+change-xp-description: 🎚️ Admin Command » Ändere die XP (-Level) eines Servermitgliedes (UM etwas)
+clear-xp-description: 🗑️ Admin Command » Lösche alle XP-Punkte eines Servermitglieds
