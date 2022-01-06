@@ -81,3 +81,10 @@ invite-description:
   - ""
   - "> 👉 **{link}**"
 invite-command-description: ✨ Lade Freunde zum Discord ein und erhalte XP/Erfahrungs-Punkte!
+
+invited-title: "🤗 Neues Mitglied eingeladen: {user}"
+invited-description:
+  - "**» Eingeladen von:** {inviter}"
+  - "> → **Benutzer-ID:** `{inviter_id}`"
+  - "**» Account erstellt:** <t:{created}:R>"
+  - "**» Benutzer-ID:** `{id}`"

@@ -71,11 +71,20 @@ invite-title: ✨ Hier, dein Einladungs-Link!
 invite-description:
   - "Natürlich kannst du mit dem Link auch mehrere Freunde einladen!"
   - "Wenn du den Link vergessen oder verloren hast, kein Problem:"
-  - "Du kannst jederzeit /invite ausführen und neue Links erstellen."
+  - "Du kannst jederzeit `/invite` ausführen und neue Links erstellen."
+  - ""
   - "Außerdem verdienst du für jeden, den du einlädst, zusätztlich XP, aber:"
-  - "Wenn die Person wieder den Server verlässt, verlierst du auch das XP!"
+  - "Wenn die Person wieder den Server verlässt, __verlierst__ du das erhaltene XP!"
+  - ""
   - "⚠️ **Warnung!** Fallst du fake/'alt' oder (böswillige) Bots einlädst, wirst auch du gebannt!"
   - "Sollten wir sehen, dass immer mehr inaktive (Alt/Fake-)Accounts eingeladen werden, werden die Regelungen verschärft."
   - ""
   - "> 👉 **{link}**"
 invite-command-description: ✨ Lade Freunde zum Discord ein und erhalte XP/Erfahrungs-Punkte!
+
+invited-title: "🤗 Neues Mitglied eingeladen: {user}"
+invited-description:
+  - "**» Eingeladen von:** {inviter}"
+  - "> → **Benutzer-ID:** `{inviter_id}`"
+  - "**» Account erstellt:** <t:{created}:R>"
+  - "**» Benutzer-ID:** `{id}`"

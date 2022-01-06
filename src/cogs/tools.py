@@ -76,7 +76,9 @@ class Tools(commands.Cog):
         for channel in config.load()['invite-channels']:
             if channel in [c.id for c in ctx.guild.text_channels]:
                 invitation = await ctx.guild.get_channel(channel).create_invite(reason=f'Guest Invite Link ({str(ctx.author)})')
+                config.set('inviteowners', invitation.id, ctx.author.id) 
                 await ctx.respond(embed=discord.Embed(title=config.lang('invite-title'), description=config.lang('invite-description', {'link': invitation.url}), color=management.color()))
+
 
 def setup(client):
     client.add_cog(Tools(client))

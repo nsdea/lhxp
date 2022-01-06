@@ -12,4 +12,5 @@ bar-empty: ":white_large_square:"
 
 # CHANNELS
 invite-channels: [657287172474273822, 921468392618209318]
+welcome-channels: [657287172474273822, 921468392618209318]
 rank-message-channels: [657287172474273822, 921468392618209318] # Rank reward message channel

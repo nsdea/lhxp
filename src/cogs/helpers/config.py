@@ -46,8 +46,8 @@ def edit(name: str='config', path: Union[str, list]=None, to: str=None) -> None:
 
     yaml.dump(data=source, stream=open(get_path(name), 'w'), indent=2)
 
-def save(source, filename):
-    yaml.dump(data=source, stream=open(f'src/{filename}.yml', 'w'), indent=2)
+def save(filename: str, source: dict):
+    yaml.dump(data=source, stream=open(get_path(filename), 'w'), indent=2)
 
 def set(filename: str, key, value=None):
     d = load(filename)
