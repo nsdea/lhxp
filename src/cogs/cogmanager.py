@@ -14,6 +14,9 @@ class CogManager(commands.Cog):
 
     @slash_command(description=config.lang('reload-description'))
     async def refresh(self, ctx, cog: discord.commands.Option(str, config.lang('cog'), required=False, default='')):
+        if cog == 'error.test':
+            raise Exception('Intentional Testing Error')
+
         if not cog:
             cog_list_joiner = '\n**»** '
             return await ctx.respond(embed=discord.Embed(title=config.lang('reload-list-title'), description=f'**»** {cog_list_joiner.join([str(c) for c in self.client.cogs])}', color=management.color()))

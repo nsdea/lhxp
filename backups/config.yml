@@ -5,6 +5,7 @@ playing: Beta (06.01.2022)
 word-reward-xp: .2
 bumper-reward-xp: 15
 helper-reward-xp: 30
+invite-reward-xp: 50
 
 # EMOJIS
 bar-fill: ":blue_square:"

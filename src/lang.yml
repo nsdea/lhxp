@@ -9,6 +9,10 @@ if-in-levels: In Level zählen? (Standard = An)
 error-tip: ❗ Bitte gib die Fehlermeldung inklusive deines Befehls an das (Bot-Entwicklungs-)Team weiter! Danke.
 error-title: 🛑 Ein Fehler ist aufgetreten :(
 error-reload: ❌ Diese Erweiterung konnte nicht gefunden werden!
+error-view-url: 👉 Fehler-Info öffnen
+
+error-additional-title: 🌐 Automatische Fehler-Übersetzung
+error-additional-footer: Sorry, falls die Übersetzung nicht genau ist!
 
 success-mod: 🔧 Erfolgreich geändert!
 success-reload: 🔃 Erweiterung wurde erfolgreich neu geladen!

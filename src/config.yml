@@ -1,16 +1,17 @@
 # GENERAL
-playing: Beta (06.01.2022)
+playing: Beta (07.01.2022)
 
 # XP REWARDS
-word-reward-xp: .2
+word-reward-xp: 0.2
 bumper-reward-xp: 15
 helper-reward-xp: 30
+invite-reward-xp: 50
 
 # EMOJIS
 bar-fill: ":blue_square:"
 bar-empty: ":white_large_square:"
 
 # CHANNELS
-invite-channels: [657287172474273822, 921468392618209318]
-welcome-channels: [657287172474273822, 921468392618209318]
+invite-channels: [657287172474273822, 921468392618209318] # Channel the invite points to
+welcome-channels: [657287172474273822, 921468392618209318] # Welcome log
 rank-message-channels: [657287172474273822, 921468392618209318] # Rank reward message channel

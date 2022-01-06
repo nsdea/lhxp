@@ -52,7 +52,7 @@ class Tools(commands.Cog):
         await ctx.respond(embed=discord.Embed(
             title=config.lang('xp-title', {'user': str(user)}),
             description=config.lang('xp-description', {'level_amount': xp.level_of(user), 'level_for_next_rank': level_for_next_rank, 'rank': user_rank, 'xp_amount': xp.of(user), 'xp_for_next_level': xp.needed_for_next_level(user), 'bar': bar}),
-            color=rank_color).set_thumbnail(url=user.avatar.url)
+            color=rank_color).set_thumbnail(url=user.avatar.url if user.avatar else user.default_avatar.url)
         )
 
     @slash_command(description=config.lang('leaderboard-command-description'))

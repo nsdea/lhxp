@@ -52,7 +52,7 @@ def save(filename: str, source: dict):
 def set(filename: str, key, value=None):
     d = load(filename)
     d[key] = value
-    save(d, filename)
+    save(filename, d)
 
 def change(filename: str, key, value: int=0):
     d = load(filename)
@@ -63,7 +63,7 @@ def change(filename: str, key, value: int=0):
     else:
         d[key] += value
         
-    save(d, filename)
+    save(filename, d)
 
 def var(string: str, dic: dict={}):
     """Replaces a string using a dict."""

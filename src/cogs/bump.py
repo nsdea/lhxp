@@ -18,6 +18,6 @@ class Bump(commands.Cog):
             if ':thumbsup:' in message.embeds[0].description: # succesful bump
                 bumper = message.guild.get_member(int(message.embeds[0].description.split('@')[1].split('>')[0]), config.load()['bumper-reward-xp'])
                 xp.add(bumper)
-
+        
 def setup(client):
     client.add_cog(Bump(client))

@@ -62,7 +62,7 @@ def user_to_id(user):
 
     return user
 
-def add(user: discord.Member, value: int):
+def add(user, value: int):
     config.change('xp', user_to_id(user), value)
     on_add(user, value)
 

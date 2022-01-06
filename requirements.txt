@@ -6,6 +6,7 @@ humanize
 asyncpraw
 dateparser
 youtube_dl
+translators
 python-dotenv
 discord-together
 
