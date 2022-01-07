@@ -10,7 +10,7 @@ status-stable: online
 # Linux: the PC name can be looked up when starting the terminal, e.g.: user@computer:~$
 # Feel free to enter YOUR computer name if you are testing the bot on your local machine!
 # Developement mode is automatically being enabled when the machine (NOT USER!) name matches one of the following:
-dev-names: ['uwuntu', 'RTX3090', 'nexus', 'lix', 'onlix', 'on']
+dev-names: ['nexus', 'lix', 'onlix', 'on']
 
 # XP REWARDS
 # XP per word in message

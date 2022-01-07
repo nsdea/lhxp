@@ -57,10 +57,12 @@ class XPEvent(commands.Cog):
 
         penultimate_message = await message.author.history(limit=2).flatten()
         penultimate_message = list(penultimate_message)[1]
-        penultimate_message_time = time.mktime(penultimate_message).created_at.timetuple()
+        penultimate_message_time = time.mktime(penultimate_message.created_at.timetuple())
         today_begin = (time.time()//86400)*86400
 
         if today_begin > penultimate_message_time:
+            print(today_begin, penultimate_message_time)
+            print(penultimate_message.content)
             config.change('dailystep', message.author.id, 1)
 
         daily_reward = config.load()['daily-rewards'][int(time.strftime('%d'))-1]
