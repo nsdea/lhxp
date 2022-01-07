@@ -294,14 +294,14 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
 The following files are being managed automatically by the code.
 
-- **`dailies.yml`** [[local](src/dailies.yml) or [online/GitHub](/blob/main/src/dailies.yml)]
-    - Last message written (on the day) by the user, used for daily rewards. 
+- **`dailystep.yml`** [[local](src/dailies.yml) or [online/GitHub](/blob/main/src/dailies.yml)]
+    - On how many days a user has written at least one message in the month. 
 
         ```yml
         
-        # user (id/int): timestamp (unix/int)
-        338711554683830292: 1641244836.794864
-        657900196189044736: 1641476016.8825243
+        # user (id/int): step (int)
+        338711554683830292: 2
+        657900196189044736: 4
         ...
         ```
 

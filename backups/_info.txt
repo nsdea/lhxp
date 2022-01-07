@@ -1,6 +1,6 @@
 This file was auto-generated!
 
-Last automatic backup: 01/07/2022, 15:48:37
+Last automatic backup: 01/08/2022, 00:08:10
 Backed up:
 	- inviteowners.yml
 	- invitedby.yml
@@ -9,6 +9,7 @@ Backed up:
 	- colors.yml
 	- lang.yml
 	- xp.yml
+	- dailystep.yml
 	- helperreward.yml
 	- invites.yml
 	- config.yml

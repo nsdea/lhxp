@@ -62,7 +62,7 @@ def main():
                 config.set('times', 'xp-reset', (time.time()//2629800)*2629800) # beginning of the current month
 
             if time.time() - config.load('times')['xp-reset'] > 2629800: # 1 month since last reset
-                for f in ['helperreward', 'invitedby', 'inviteowners', 'invites', 'xp']:
+                for f in ['dailystep', 'helperreward', 'invitedby', 'inviteowners', 'invites', 'xp']:
                     config.save(f, {}) # reset
 
                 config.set('times', 'xp-reset', (time.time()//2629800)*2629800) # beginning of the current month

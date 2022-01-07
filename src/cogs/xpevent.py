@@ -3,6 +3,7 @@ try:
 except ImportError:
     import helpers.config, helpers.management, helpers.xp, helpers.spam
 
+import time
 import discord
 
 from discord.ext import commands
@@ -40,14 +41,30 @@ class XPEvent(commands.Cog):
     async def give_xp(self, message):
         text = message.content.replace('  ', '') # avoid spam
         xp_gain = text.count(' ')*config.load()['word-reward-xp'] # word count
-
+    
         if xp_gain < 2: # don't go into negative XP numbers!
             xp_gain = config.load()['word-reward-xp']
 
         xp.add(message.author, xp_gain)
 
     async def daily_check(self, message):
+        is_empty = message.author.id not in list(config.load('dailystep').keys())
+        if is_empty:
+            config.set('dailystep', message.author.id, 0)
         
+        if config.load('dailystep')[message.author.id] > 31:
+            config.set('dailystep', message.author.id, 0)
+
+        penultimate_message = await message.author.history(limit=2).flatten()
+        penultimate_message = list(penultimate_message)[1]
+        penultimate_message_time = time.mktime(penultimate_message).created_at.timetuple()
+        today_begin = (time.time()//86400)*86400
+
+        if today_begin > penultimate_message_time:
+            config.change('dailystep', message.author.id, 1)
+
+        daily_reward = config.load()['daily-rewards'][int(time.strftime('%d'))-1]
+        xp.add(message.author, daily_reward*config.load()['daily-reward-multiplier'])
 
     @commands.Cog.listener()
     async def on_message(self, message):
