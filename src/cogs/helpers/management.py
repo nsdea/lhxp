@@ -13,7 +13,7 @@ def testing_mode() -> bool:
     Returns:
         bool: Test mode enabled?
     """
-    return socket.gethostname() in ['uwuntu', 'RTX3090', 'nexus', 'lix', 'onlix', 'on']
+    return socket.gethostname() in config.load()['dev-names']
 
 def color(style: str='primary') -> discord.Color:
     """Returns a color from the config.^

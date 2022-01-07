@@ -12,11 +12,7 @@ class XPEvent(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if message.author.bot:
-            return
-
+    async def antispam(self, message):
         message_is_spam = False
         message_content = message.content
 
@@ -39,8 +35,9 @@ class XPEvent(commands.Cog):
                 await last_message.delete()
             except:
                 pass
-            return
+        return message_is_spam
 
+    async def give_xp(self, message):
         text = message.content.replace('  ', '') # avoid spam
         xp_gain = text.count(' ')*config.load()['word-reward-xp'] # word count
 
@@ -49,6 +46,21 @@ class XPEvent(commands.Cog):
 
         xp.add(message.author, xp_gain)
 
+    async def daily_check(self, message):
+        
+
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author.bot:
+            return
+
+        was_spam = await self.antispam(message)
+        
+        if was_spam:
+            return
+
+        await self.give_xp(message)
+        await self.daily_check(message)
         await self.client.process_commands(message)
 
 def setup(client):

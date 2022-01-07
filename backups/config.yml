@@ -1,17 +1,44 @@
 # GENERAL
-playing: Beta (06.01.2022)
+# Playing RPC status for the bot
+playing: Beta (07.01.2022)
+# Bot-user emoji/color status in developement mode
+status-dev: idle
+# Bot-user emoji/color status in stable/normal hosting mode
+status-stable: online
+# Computer names on which the system is being tested on.
+# Windows: the PC name can be looked up in the system info
+# Linux: the PC name can be looked up when starting the terminal, e.g.: user@computer:~$
+# Feel free to enter YOUR computer name if you are testing the bot on your local machine!
+# Developement mode is automatically being enabled when the machine (NOT USER!) name matches one of the following:
+dev-names: ['uwuntu', 'RTX3090', 'nexus', 'lix', 'onlix', 'on']
 
 # XP REWARDS
-word-reward-xp: .2
+# XP per word in message
+word-reward-xp: 0.2
+# XP per successfull disboard-bump
 bumper-reward-xp: 15
+# XP for helping another user with an issue
 helper-reward-xp: 30
+# XP for inviting someone to the server
 invite-reward-xp: 50
 
+# XP REWARDS » DAILY ACTIVITY (sending a message)
+# Every element is a day, starting with day one
+# After the last element in the list it will be the same for the rest of the month
+daily-rewards: [0, 0, 0, 0, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 6, 6, 6, 6, 6, 8]
+# Before giving the user the XP, the XP can be multiplied by the value set below...
+daily-reward-multiplier: 2
+
 # EMOJIS
+# Bar emoji for filling the bar
 bar-fill: ":blue_square:"
+# Bar emoji for the rest of the bar
 bar-empty: ":white_large_square:"
 
-# CHANNELS
-invite-channels: [657287172474273822, 921468392618209318]
+# CHANNELS [actual server, testing server]
+# Channel the invite points to
+invite-channels: [657287172474273822, 921468392618209318] 
+# Welcome log with invite info
 welcome-channels: [657287172474273822, 921468392618209318]
-rank-message-channels: [657287172474273822, 921468392618209318] # Rank reward message channel
+# Where rank-levelups should be posted to
+rank-message-channels: [657287172474273822, 921468392618209318]

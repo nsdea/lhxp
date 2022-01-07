@@ -14,7 +14,9 @@ colorama.init(autoreset=True)
 
 # IMPORTS
 import os
+import time
 import dotenv
+import asyncio
 import discord
 import discord.commands
 
@@ -54,6 +56,19 @@ def main():
         )
         print(f'{colorama.Fore.BLUE}INFO » Playing', discord.Status.idle if management.testing_mode() else discord.Status.streaming + config.load()['playing'])
 
+    async def monthly_reset(): 
+        while True:
+            if not config.load('times').get('xp-reset'):
+                config.set('times', 'xp-reset', (time.time()//2629800)*2629800) # beginning of the current month
+
+            if time.time() - config.load('times')['xp-reset'] > 2629800: # 1 month since last reset
+                for f in ['helperreward', 'invitedby', 'inviteowners', 'invites', 'xp']:
+                    config.save(f, {}) # reset
+
+                config.set('times', 'xp-reset', (time.time()//2629800)*2629800) # beginning of the current month
+
+            await asyncio.sleep(60)
+
     @client.event
     async def on_ready():
         management.set_start_time()
@@ -61,6 +76,7 @@ def main():
         print(f'{colorama.Fore.GREEN}SUCCESS »', f'Online: {client.user}')
 
         client.loop.create_task(status_task())
+        client.loop.create_task(monthly_reset())
 
     # Extensions
     extensions_loaded = []
