@@ -344,6 +344,14 @@ The following files are being managed automatically by the code.
         ...
         ```
 
+- **`lastmessage.yml`** [[local](src/lastmessage.yml) or [online/GitHub](/blob/main/src/lastmessage.yml)]
+    - When wrote this user the last message?
+    
+        ```yml
+        # user (id/str): count (unix/int)
+        657900196189044736: 1641244836.794864
+        ...
+
 - **`times.yml`** [[local](src/times.yml) or [online/GitHub](/blob/main/src/times.yml)]
     - When happened XY?
 

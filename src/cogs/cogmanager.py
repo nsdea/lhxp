@@ -12,6 +12,7 @@ class CogManager(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    @commands.has_permissions(administrator=True)
     @slash_command(description=config.lang('reload-description'))
     async def refresh(self, ctx, cog: discord.commands.Option(str, config.lang('cog'), required=False, default='')):
         if cog == 'error.test':

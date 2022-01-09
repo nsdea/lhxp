@@ -1,3 +1,8 @@
+try:
+    from . import management
+except ImportError:
+    import management
+
 import yaml
 
 from typing import Union
@@ -50,6 +55,8 @@ def save(filename: str, source: dict):
     yaml.dump(data=source, stream=open(get_path(filename), 'w'), indent=2)
 
 def set(filename: str, key, value=None):
+
+
     d = load(filename)
     d[key] = value
     save(filename, d)

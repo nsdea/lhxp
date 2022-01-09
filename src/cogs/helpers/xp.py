@@ -1,7 +1,7 @@
 try:
-    from . import config
+    from . import config, management
 except ImportError:
-    import config
+    import config, management
 
 import sys
 import math
@@ -19,7 +19,7 @@ def set_client(c):
     client = c 
 
 def of(user):
-    user = user_to_id(user)
+    user = management.user_to_id(user)
     xp_value = 0
 
     if config.load('xp').get(user):
@@ -28,7 +28,7 @@ def of(user):
     return round(xp_value, 1)
 
 def level_of(user):
-    user = user_to_id(user)
+    user = management.user_to_id(user)
     xp_value = 0
 
     if config.load('xp').get(user):
@@ -53,18 +53,9 @@ def on_add(user: discord.Member, xp_change):
             client.loop.create_task(give_rank(user, rank))
             break
 
-def user_to_id(user):
-    if isinstance(user, discord.Member) or isinstance(user, discord.User):
-        return user.id
-
-    if isinstance(user, str):
-        return int(user)
-
-    return user
-
 def add(user, value: int):
-    config.change('xp', user_to_id(user), value)
+    config.change('xp', management.user_to_id(user), value)
     on_add(user, value)
 
     if of(user) < 0:
-        config.set('xp', user_to_id(user), 0)
+        config.set('xp', management.user_to_id(user), 0)

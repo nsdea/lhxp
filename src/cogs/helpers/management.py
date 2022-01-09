@@ -42,3 +42,12 @@ def get_start_time() -> datetime.datetime:
     """
     global start_timestamp
     return start_timestamp
+
+def user_to_id(user):
+    if isinstance(user, discord.Member) or isinstance(user, discord.User):
+        return user.id
+
+    if isinstance(user, str):
+        return int(user)
+
+    return user
