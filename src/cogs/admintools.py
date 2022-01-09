@@ -16,26 +16,26 @@ class AdminTools(commands.Cog):
     @slash_command(description=config.lang('set-xp-description'))
     async def setxp(self, ctx,
         user: discord.commands.Option(discord.Member, config.lang('user')),
-        level: discord.commands.Option(int, config.lang('level-amount')),
+        value: discord.commands.Option(int, config.lang('level-amount')),
         in_levels: discord.commands.Option(bool, config.lang('if-in-levels'), required=False, default=True),
     ):
         if in_levels:
-            level = level**2
+            value = xp.level_to_xp(value)
 
-        config.set('xp', user.id, level)
+        config.set('xp', user.id, value)
         await ctx.respond(embed=discord.Embed(title=config.lang('success-mod'), color=management.color()))
 
     @commands.has_permissions(administrator=True)
     @slash_command(description=config.lang('change-xp-description'))
     async def changexp(self, ctx,
         user: discord.commands.Option(discord.Member, config.lang('user')),
-        level: discord.commands.Option(int, config.lang('level-amount')),
+        value: discord.commands.Option(int, config.lang('level-amount')),
         in_levels: discord.commands.Option(bool, config.lang('if-in-levels'), required=False, default=True),
     ):
         if in_levels:
-            level = level**2
+            value = xp.level_to_xp(value)
 
-        config.change('xp', user.id, level)
+        config.change('xp', user.id, value)
         await ctx.respond(embed=discord.Embed(title=config.lang('success-mod'), color=management.color()))
 
     @commands.has_permissions(administrator=True)

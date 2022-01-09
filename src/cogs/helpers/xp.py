@@ -10,9 +10,18 @@ import asyncio
 
 sys.path.append('..') # https://stackoverflow.com/a/11096846
 
-from bot import give_rank
+try:
+    from bot import give_rank
+except:
+    print('Warning » helpers/xp Couldn\'t import bot')
 
 client = None
+
+def xp_to_level(x: int) -> int:
+    return eval(config.load()['level-formula'])
+
+def level_to_xp(x: int) -> int:
+    return eval(config.load()['xp-formula'])
 
 def set_client(c):
     global client
@@ -34,13 +43,13 @@ def level_of(user):
     if config.load('xp').get(user):
         xp_value = config.load('xp').get(user)
     
-    return math.trunc(xp_value ** 0.5)
+    return xp_to_level(xp_value)
 
 def needed_for_level(user):
-    return (level_of(user))**2 
+    return level_to_xp(level_of(user))
 
 def needed_for_next_level(user):
-    return (level_of(user)+1)**2
+    return level_to_xp(level_of(user)+1)
 
 def on_add(user: discord.Member, xp_change):
     global client
@@ -59,3 +68,7 @@ def add(user, value: int):
 
     if of(user) < 0:
         config.set('xp', management.user_to_id(user), 0)
+
+if __name__ == '__main__':
+    print(xp_to_level(123))
+    print(level_to_xp(123))
