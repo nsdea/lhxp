@@ -57,6 +57,7 @@ def main():
         print(f'{colorama.Fore.BLUE}INFO » Playing', discord.Status.idle if management.testing_mode() else discord.Status.streaming + config.load()['playing'])
 
     async def monthly_reset(): 
+        return # deactivated function
         while True:
             if not config.load('times').get('xp-reset'):
                 config.set('times', 'xp-reset', (time.time()//2629800)*2629800) # beginning of the current month
