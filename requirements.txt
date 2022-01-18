@@ -3,6 +3,7 @@ urllib3
 chardet
 requests
 humanize
+colorama
 asyncpraw
 dateparser
 youtube_dl
