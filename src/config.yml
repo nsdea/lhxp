@@ -1,6 +1,6 @@
 # GENERAL
 # Playing RPC status for the bot
-playing: Pre-Release (09.02.)
+playing: "Stable (18.02.2021)"
 # Bot-user emoji/color status in developement mode
 status-dev: idle
 # Bot-user emoji/color status in stable/normal hosting mode
@@ -10,7 +10,7 @@ status-stable: online
 # Linux: the PC name can be looked up when starting the terminal, e.g.: user@computer:~$
 # Feel free to enter YOUR computer name if you are testing the bot on your local machine!
 # Developement mode is automatically being enabled when the machine (NOT USER!) name matches one of the following:
-dev-names: ['nexus', 'lix', 'onlix', 'on']
+dev-names: ['nexus', 'lix', 'onlix', 'on', 'v25992']
 
 # Python injection: x = xp
 # level = ...
@@ -22,7 +22,7 @@ xp-formula: "x**2"
 
 # XP REWARDS
 # XP per word in message
-word-reward-xp: 0.2
+word-reward-xp: 0.1
 # XP per successfull disboard-bump
 bumper-reward-xp: 15
 # XP for helping another user with an issue
@@ -43,10 +43,13 @@ bar-fill: ":blue_square:"
 # Bar emoji for the rest of the bar
 bar-empty: ":white_large_square:"
 
-# CHANNELS [actual server, testing server]
+# CHANNELS [actual server ID, testing server ID]
+
 # Channel the invite points to
 invite-channels: [657287172474273822, 921468392618209318] 
 # Welcome log with invite info
 welcome-channels: [657287172474273822, 921468392618209318]
 # Where rank-levelups should be posted to
 rank-message-channels: [657287172474273822, 921468392618209318]
+# Where normal levelups should be posted to
+levelup-message-channels: [623157804013715456, 921468393339617281]
