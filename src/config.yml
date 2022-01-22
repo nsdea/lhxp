@@ -50,3 +50,6 @@ invite-channels: [657287172474273822, 921468392618209318]
 welcome-channels: [657287172474273822, 921468392618209318]
 # Where rank-levelups should be posted to
 rank-message-channels: [657287172474273822, 921468392618209318]
+
+# these files will be cleared automatically every month
+monthly-reset: ['dailystep', 'helperreward']

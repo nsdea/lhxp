@@ -63,11 +63,15 @@ class Tools(commands.Cog):
         emojis = [':first_place:', ':second_place:', ':third_place:', ':four:', ':five:', ':six:', ':seven:', ':eight:', ':nine:']
 
         text = '\n'
-        place = 0
+        place = -1
 
         for user in list(users.keys()):
-            text += f'{emojis[place]} {ctx.guild.get_member(user).mention} **{xp.level_of(user)}** \n'
             place += 1
+            
+            if not user in [u.id for u in ctx.guild.members]:
+                continue
+
+            text += f'{emojis[place]} {ctx.guild.get_member(user).mention} **{xp.level_of(user)}** \n'
 
         await ctx.respond(embed=discord.Embed(title=config.lang('leaderboard-title'), description=text, color=management.color()))
 

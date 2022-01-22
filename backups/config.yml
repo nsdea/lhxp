@@ -12,6 +12,14 @@ status-stable: online
 # Developement mode is automatically being enabled when the machine (NOT USER!) name matches one of the following:
 dev-names: ['nexus', 'lix', 'onlix', 'on']
 
+# Python injection: x = xp
+# level = ...
+level-formula: "math.trunc(x ** 0.5)"
+
+# Python injection: x = level
+# xp = ...
+xp-formula: "x**2"
+
 # XP REWARDS
 # XP per word in message
 word-reward-xp: 0.2
@@ -42,3 +50,6 @@ invite-channels: [657287172474273822, 921468392618209318]
 welcome-channels: [657287172474273822, 921468392618209318]
 # Where rank-levelups should be posted to
 rank-message-channels: [657287172474273822, 921468392618209318]
+
+# these files will be cleared automatically every month
+monthly-reset: ['dailystep', 'helperreward']
