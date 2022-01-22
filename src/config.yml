@@ -1,6 +1,6 @@
 # GENERAL
 # Playing RPC status for the bot
-playing: "Stable (18.02.2021)"
+playing: "Stable (22.02.2021)"
 # Bot-user emoji/color status in developement mode
 status-dev: idle
 # Bot-user emoji/color status in stable/normal hosting mode
@@ -10,7 +10,7 @@ status-stable: online
 # Linux: the PC name can be looked up when starting the terminal, e.g.: user@computer:~$
 # Feel free to enter YOUR computer name if you are testing the bot on your local machine!
 # Developement mode is automatically being enabled when the machine (NOT USER!) name matches one of the following:
-dev-names: ['nexus', 'lix', 'onlix', 'on', 'v25992']
+dev-names: ['nexus', 'on']
 
 # Python injection: x = xp
 # level = ...

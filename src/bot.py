@@ -54,7 +54,7 @@ def main():
             activity=discord.Game(name=config.load()['playing']),
             status=discord.Status.idle if management.testing_mode() else discord.Status.dnd
         )
-        print(f'{colorama.Fore.BLUE}INFO » Playing', discord.Status.idle if management.testing_mode() else discord.Status.streaming + config.load()['playing'])
+        print(f'{colorama.Fore.BLUE}INFO » {str(discord.Status.idle) if management.testing_mode() else str(discord.Status.streaming)} {config.load()["playing"]}')
 
     async def monthly_reset(): 
         while True:
