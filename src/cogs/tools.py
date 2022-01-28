@@ -66,10 +66,9 @@ class Tools(commands.Cog):
         place = -1
 
         for user in list(users.keys()):
-            place += 1
-            
             if not user in [u.id for u in ctx.guild.members]:
                 continue
+            place += 1
 
             text += f'{emojis[place]} {ctx.guild.get_member(user).mention} **{xp.level_of(user)}** \n'
 

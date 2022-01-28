@@ -23,6 +23,5 @@ class Info(commands.Cog):
         embed.add_field(name=':desktop: Ping', value=str(round(self.client.latency * 1000, 2)) + 'ms')
         await ctx.respond(embed=embed)
 
-
 def setup(client):
     client.add_cog(Info(client))
