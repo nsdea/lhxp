@@ -115,13 +115,13 @@ The arrow (→) shows which cog the command is connected to.
     - The bot goes as far as **creating** and sending a **temporary website** for the traceback to be read. 
 
 - `Anti Spam`
-    - To see how it works, click here: [[src/cogs/helpers/spam.py](src/cogs/helpers/spam.py)
+    - To see how it works, click here: [src/cogs/helpers/spam.py](src/cogs/helpers/spam.py)
 
 - `XP Gaining`
     - Allows users to level up in realtime
 
 - `Rank Check`
-    - Allows users to obtain new ranks by achieving a higher level. Too see, which levels you need, click here: [[src/ranks.yml](src/ranks.yml)
+    - Allows users to obtain new ranks by achieving a higher level. Too see, which levels you need, click here: [src/ranks.yml](src/ranks.yml)
 
 ## Installation
 
@@ -248,7 +248,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
         ```
 
-- **`lang.yml`** [[src/lang.yml](src/lang.yml)
+- **`lang.yml`** [src/lang.yml](src/lang.yml)
         ```yml
         # basic strings
         key: value # or
@@ -283,7 +283,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
         ```
 
-- **`ranks.yml`** [[src/ranks.yml](src/ranks.yml)
+- **`ranks.yml`** [src/ranks.yml](src/ranks.yml)
     - Implementation in the Python code is shown above, see `config.yml`.
 
 ### Auto-Generated
