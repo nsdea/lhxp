@@ -115,13 +115,13 @@ The arrow (→) shows which cog the command is connected to.
     - The bot goes as far as **creating** and sending a **temporary website** for the traceback to be read. 
 
 - `Anti Spam`
-    - To see how it works, click here: [[local](src/cogs/helpers/spam.py) or [online/GitHub](/blob/main/src/cogs/helpers/spam.py)]
+    - To see how it works, click here: [[src/cogs/helpers/spam.py](src/cogs/helpers/spam.py)
 
 - `XP Gaining`
     - Allows users to level up in realtime
 
 - `Rank Check`
-    - Allows users to obtain new ranks by achieving a higher level. Too see, which levels you need, click here: [[local](src/ranks.yml) or [online/GitHub](/blob/main/src/ranks.yml)]
+    - Allows users to obtain new ranks by achieving a higher level. Too see, which levels you need, click here: [[src/ranks.yml](src/ranks.yml)
 
 ## Installation
 
@@ -191,7 +191,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
 > **Warning:** This - as well - isn't fully updated.
 
-- **`colors.yml`** [[local](src/colors.yml) or [online/GitHub](/blob/main/src/colors.yml)]
+- **`colors.yml`** [src/colors.yml](src/colors.yml)
     - Color codes in the format `0xFFFFFF`
 
         ```yml
@@ -220,7 +220,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
         ```
 
 
-- **`config.yml`** [[local](src/config.yml) or [online/GitHub](/blob/main/src/config.yml)]
+- **`config.yml`** [src/config.yml](src/config.yml)
     - General bot configuration, such as *playing ...*-Status
 
         ```yml
@@ -248,8 +248,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
         ```
 
-- **`lang.yml`** [[local](src/lang.yml) or [online/GitHub](/blob/main/src/lang.yml)]
-    - Translations of almost all strings
+- **`lang.yml`** [[src/lang.yml](src/lang.yml)
         ```yml
         # basic strings
         key: value # or
@@ -284,7 +283,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
         ```
 
-- **`ranks.yml`** [[local](src/ranks.yml) or [online/GitHub](/blob/main/src/ranks.yml)]
+- **`ranks.yml`** [[src/ranks.yml](src/ranks.yml)
     - Implementation in the Python code is shown above, see `config.yml`.
 
 ### Auto-Generated
@@ -294,7 +293,7 @@ Don't configure the files stored in `/backups`! The code just looks for the *act
 
 The following files are being managed automatically by the code.
 
-- **`dailystep.yml`** [[local](src/dailies.yml) or [online/GitHub](/blob/main/src/dailies.yml)]
+- **`dailystep.yml`** [src/dailies.yml](src/dailies.yml)
     - On how many days a user has written at least one message in the month. 
 
         ```yml
@@ -305,7 +304,7 @@ The following files are being managed automatically by the code.
         ...
         ```
 
-- **`helperreward.yml`** [[local](src/helperreward.yml) or [online/GitHub](/blob/main/src/helperreward.yml)]
+- **`helperreward.yml`** [src/helperreward.yml](src/helperreward.yml)
     - Last date (unix timestamp) of when someone thanked (`/thank` [in German]) some other person for helping them.
 
         ```yml
@@ -316,7 +315,7 @@ The following files are being managed automatically by the code.
         ...
         ```
 
-- **`invitedby.yml`** [[local](src/invitedby.yml) or [online/GitHub](/blob/main/src/invitedby.yml)]
+- **`invitedby.yml`** [src/invitedby.yml](src/invitedby.yml)
     - Who invited someone?
     
         ```yml
@@ -325,7 +324,7 @@ The following files are being managed automatically by the code.
         ...
         ``` 
 
-- **`inviteowners.yml`** [[local](src/inviteowners.yml) or [online/GitHub](/blob/main/src/inviteowners.yml)]
+- **`inviteowners.yml`** [src/inviteowners.yml](src/inviteowners.yml)
     - Who created this invite?
     
         ```yml
@@ -335,7 +334,7 @@ The following files are being managed automatically by the code.
         ...
         ```
 
-- **`invites.yml`** [[local](src/invites.yml) or [online/GitHub](/blob/main/src/invites.yml)]
+- **`invites.yml`** [src/invites.yml](src/invites.yml)
     - How many invite-uses has this user?
     
         ```yml
@@ -344,7 +343,7 @@ The following files are being managed automatically by the code.
         ...
         ```
 
-- **`lastmessage.yml`** [[local](src/lastmessage.yml) or [online/GitHub](/blob/main/src/lastmessage.yml)]
+- **`lastmessage.yml`** [src/lastmessage.yml](src/lastmessage.yml)
     - When wrote this user the last message?
     
         ```yml
@@ -352,7 +351,7 @@ The following files are being managed automatically by the code.
         657900196189044736: 1641244836.794864
         ...
 
-- **`times.yml`** [[local](src/times.yml) or [online/GitHub](/blob/main/src/times.yml)]
+- **`times.yml`** [src/times.yml](src/times.yml)
     - When happened XY?
 
         ```yml
@@ -361,7 +360,7 @@ The following files are being managed automatically by the code.
         ...
         ```
 
-- **`xp.yml`** [[local](src/xp.yml) or [online/GitHub](/blob/main/src/xp.yml)]
+- **`xp.yml`** [src/xp.yml](src/xp.yml)
     - XP points of all users
 
         ```yml
